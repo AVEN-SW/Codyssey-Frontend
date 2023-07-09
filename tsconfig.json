@@ -6,7 +6,8 @@
     "paths": {
       "@src/*": ["src/*"],
       "@components/*": ["src/components/*"],
-      "@UI/*": ["src/components/UI/*"]
+      "@UI/*": ["src/components/UI/*"],
+      "@Api/*": ["src/lib/apis/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,
