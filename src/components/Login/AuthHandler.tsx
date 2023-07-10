@@ -1,6 +1,6 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { AuthInstance } from '@Api/axios';
 
 interface User {
   github_id: string;
@@ -15,7 +15,7 @@ const AuthHandler = () => {
   useEffect(() => {
     const GetAccessToken = async () => {
       try {
-        const res = await axios.get(`/login?code=${searchParams.get('code')}`);
+        const res = await AuthInstance.get(`?code=${searchParams.get('code')}`);
         console.log(res.data);
         setUser(res.data);
       } catch (err) {
