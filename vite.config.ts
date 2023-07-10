@@ -8,5 +8,11 @@ export default defineConfig({
   server: {
     open: true,
     port: 3000,
+    proxy: {
+      '/login': {
+        target: 'http://cement.kro.kr:8080',
+        changeOrigin: true,
+      },
+    },
   },
 });

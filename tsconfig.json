@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "baseUrl": ".",
     "paths": {
       "@src/*": ["src/*"],
       "@components/*": ["src/components/*"],
       "@UI/*": ["src/components/UI/*"],
+      "@Login/*": ["src/components/Login/*"],
       "@Api/*": ["src/lib/apis/*"]
     },
     "allowJs": true,
@@ -17,6 +18,7 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
+    "types": ["vite/client"],
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,

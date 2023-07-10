@@ -8,7 +8,7 @@ const Modal = () => {
   return (
     <ModalSection>
       <ElementContainer>
-        <ButtonContainer onClick={() => navigate('login')}>
+        <ButtonContainer onClick={() => navigate('login-page')}>
           로그인
         </ButtonContainer>
         <ButtonContainer>아무 말</ButtonContainer>
