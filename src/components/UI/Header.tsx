@@ -1,8 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import Modal from '@UI/Modal';
+import { useRecoilValue } from 'recoil';
+import RecoilModalRoot from './Modals/RecoilModalRoot';
+import useModal from '@Modal/useModal';
+import { modalListState } from '@Modal/atoms';
 
 const Header = () => {
+  const currentModalState = useRecoilValue(modalListState);
+  const { openModal, closeModal } = useModal();
+
+  const handleClick = () => {
+    if (currentModalState.includes('toggle')) {
+      closeModal('toggle');
+      return;
+    }
+
+    openModal('toggle', null);
+  };
   return (
     <HeaderSection>
       <ElementContainer>
@@ -28,7 +42,7 @@ const Header = () => {
             />
           </svg>
         </MenuBarSection>
-        <ProfileSection>
+        <ProfileSection onClick={handleClick}>
           <ProfileImageContainer>
             <svg
               width="19"
@@ -45,7 +59,7 @@ const Header = () => {
           </ProfileImageContainer>
           <DescriptionContainer>내 정보</DescriptionContainer>
         </ProfileSection>
-        <Modal />
+        <RecoilModalRoot />
       </ElementContainer>
     </HeaderSection>
   );

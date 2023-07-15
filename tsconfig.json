@@ -8,7 +8,8 @@
       "@components/*": ["src/components/*"],
       "@UI/*": ["src/components/UI/*"],
       "@Login/*": ["src/components/Login/*"],
-      "@Api/*": ["src/lib/apis/*"]
+      "@Api/*": ["src/lib/apis/*"],
+      "@Modal/*": ["src/recoil/modal/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,
