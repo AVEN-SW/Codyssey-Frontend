@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useRecoilValue } from 'recoil';
-import RecoilModalRoot from './Modals/RecoilModalRoot';
+import RecoilModalRoot from '../Modals/RecoilModalRoot';
 import useModal from '@Modal/useModal';
 import { modalListState } from '@Modal/atoms';
 
 const Header = () => {
   const currentModalState = useRecoilValue(modalListState);
+
   const { openModal, closeModal } = useModal();
 
   const handleClick = () => {
@@ -106,6 +107,7 @@ const ProfileSection = styled.div`
   border-radius: 10.5px;
   background: #fff;
   box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
 `;
 
 const ProfileImageContainer = styled.div`
